@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SearchIcon from './search.svg';
+import { Link } from 'react-router-dom'
+
 
 function SearchMovie() {
-    return (
-        <p>Search movie search bar component placeholder</p>
+
+    const [searchTerm, setSearchTerm] = useState([]);
+
+   return (
+        <>
+
+        <input 
+        type='text'
+        placeholder = 'Search for movies' 
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        />
+
+        <Link to="/searchresults" state={{ searchTerm }}>
+            
+        <img src={SearchIcon} />
+        </Link>
+        
+
+
+        </>
     )
 }
 
