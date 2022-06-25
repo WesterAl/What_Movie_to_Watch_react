@@ -8,14 +8,21 @@ function IndividualMovieCards({ movie }) {
     //const onClick = () => console.log('hi');
     
     //console.log(typeof movie)
-      
-    
+    //const movieId = movie.movieId
+    //console.log(movieId)
+    //state={{ movieId }}
+    //console.log(movie.id)
+
 
     return (
         <>
-        <Link to="/searchresults/moviedetails" >
+        
+        <Link to="/searchresults/moviedetails" state={{ movieId: movie.id }}>
            
             <div className='movie'>
+                <div>
+                    <p>{movie.id}</p>
+                </div>
                     <div>
                         <p>Movie release date {movie.release_date}</p>
                     </div>

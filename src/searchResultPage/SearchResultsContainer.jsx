@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import SearchMovie from '../commonComponents/SearchMovie';
 import IndividualMovieCards from '../homePage/IndividualMovieCards';
@@ -40,9 +40,7 @@ function SearchResultsContainer(props) {
 
     return (
         <>
-        <SearchMovie />
         <h1>-------------SearchResultsContainer-----------------</h1>
-        
         {movies?.length > 0
                 ? (
                     <div className='movieComponents'>
