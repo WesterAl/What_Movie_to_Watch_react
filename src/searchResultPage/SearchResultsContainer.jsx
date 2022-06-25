@@ -35,12 +35,8 @@ function SearchResultsContainer(props) {
         };
 
     useEffect(() => {
-        
         fetchData();
-      }, []);
-
-    console.log(movies.length)
-    
+      }, []);    
 
     return (
         <>
