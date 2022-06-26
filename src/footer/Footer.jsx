@@ -4,7 +4,7 @@ function Footer() {
     return (
         <>
         <p>
-            test
+            Footer is updated and working
         </p>
         </>
         
