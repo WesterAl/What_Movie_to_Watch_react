@@ -28,7 +28,7 @@ function MovieDetailsPageContainer(  ) {
     const fetchData = async () => {
           const res = await fetch(` https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
           const json = await res.json()
-          //console.log(json.original_title)
+          console.log(movieId)
           setMovie(json);
         };
 
@@ -72,27 +72,21 @@ function MovieDetailsPageContainer(  ) {
     return (
         <>
         <p>---------MovieDetailsPageContainer---------</p>
-        <div className='movie'>
-                    <div>
-                        <h2>{movie.original_title}</h2>
-                    </div>
-                    <div>
-                        <h3>Description</h3>
-                        <p>{movie.overview}</p>
-                    </div>
-                    <div>
-                        <img className='poster' src={movie.poster_path !== 'undefined' ? `${Poster_URL_constant}${movie.poster_path}` : "https://via.placeholder.com/400"} alt={movie.title}/>
-                        
-                    </div> 
-                    <div className='addToListButtons'>
-                        <button onClick={() => addToWatchlist({movieId})}>  
-                        Add to Watchlist
-                        </button>
-                        <button onClick={addToList}>  
-                        Add to list
-                        </button>
-                    </div>
+        <div >
+            <div className='movieImage'>
+                <div>
+                    <img className='poster' src={movie.poster_path !== 'undefined' ? `${Poster_URL_constant}${movie.poster_path}` : "https://via.placeholder.com/400"} alt={movie.title}/>
+                </div> 
             </div>
+        </div>
+        <div className='addToListButtons'>
+                    <button onClick={() => addToWatchlist({movieId})}>  
+                    Add to Watchlist
+                    </button>
+                    <button onClick={addToList}>  
+                    Add to list
+                    </button>
+                </div>
         
         <p>---------MovieDetailsPageContainer---------</p>
         </>

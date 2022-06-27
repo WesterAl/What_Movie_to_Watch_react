@@ -43,7 +43,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className="app">
       <header>
       <Pagetitle />
       <Navigationbar />

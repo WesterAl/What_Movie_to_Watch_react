@@ -1,45 +1,29 @@
-import React, { useEffect } from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom'
 
-function IndividualMovieCards({ movie }) {
-
+const IndividualMovieCards = ({ movie: { id, release_date, poster_path, title } }) => {
     const Poster_URL_constant = 'http://image.tmdb.org/t/p/w500/'
+    //console.log('Text')
+    //console.log(id)
+  return (
+    <Link to="/searchresults/moviedetails" state={{ movieId: id }}>
+        <div className="movie" key={id}>
+        <div>
+            <p>{release_date}</p>
+        </div>
 
-    //const onClick = () => console.log('hi');
-    
-    //console.log(typeof movie)
-    //const movieId = movie.movieId
-    //console.log(movieId)
-    //state={{ movieId }}
-    //console.log(movie.id)
+        <div>
+            <img src={poster_path !== "N/A" ? `${Poster_URL_constant}${poster_path}` : "https://via.placeholder.com/400"} alt={title} />
+        </div>
 
-
-    return (
-        <>
-        
-        <Link to="/searchresults/moviedetails" state={{ movieId: movie.id }}>
-           
-            <div className='movie'>
-                <div>
-                    <p>{movie.id}</p>
-                </div>
-                    <div>
-                        <p>Movie release date {movie.release_date}</p>
-                    </div>
-                    <div>
-                        <img className='poster' src={movie.poster_path !== 'undefined' ? `${Poster_URL_constant}${movie.poster_path}` : "https://via.placeholder.com/400"} alt={movie.title}/>
-                        
-                    </div>
-                    <div>
-                        <h3>{movie.original_title}</h3>
-                    </div>
-            </div>
-        </Link>
-        
-        </>
-    )
+        <div>
+            <h3>{title}</h3>
+        </div>
+        </div>
+    </Link>
+  );
 }
 
-export default IndividualMovieCards
+export default IndividualMovieCards;
 
 

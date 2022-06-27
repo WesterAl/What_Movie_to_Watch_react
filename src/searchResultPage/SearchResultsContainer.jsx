@@ -43,7 +43,7 @@ function SearchResultsContainer(props) {
         <h1>-------------SearchResultsContainer-----------------</h1>
         {movies?.length > 0
                 ? (
-                    <div className='movieComponents'>
+                    <div className='container'>
                         {movies.map((movie)  => (
                             <IndividualMovieCards movie={movie} key={movie.id} />
                             

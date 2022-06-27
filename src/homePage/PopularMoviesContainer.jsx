@@ -27,7 +27,7 @@ function PopularMoviesContainer() {
         const data = await response.json();
         //console log results from json
         setMovies(data.results);
-        //console.log(data.results);
+        console.log(data.results);
       }
   
     //Used to load popular movies from API on page load
@@ -42,11 +42,9 @@ function PopularMoviesContainer() {
     return (
         <>
         <div className='PopularMoviesContainer'>
-        <h2>Popular movies for today</h2>
-
         {movies?.length > 0
                 ? (
-                    <div className='movieComponents'>
+                    <div className='container'>
                         {movies.map((movie)  => (
                             <IndividualMovieCards movie={movie} key={movie.id} />
                             
@@ -58,12 +56,8 @@ function PopularMoviesContainer() {
 
                         </div>
                 )}
-
-        
-        
         
         </div>
-        
         </>
 
     )
