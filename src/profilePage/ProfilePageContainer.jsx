@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import IndividualMovieCards from 'C:/Users/Albin/Desktop/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
 
 const ProfilePageContainer = () => {
-    const [movies, setMovies] = useState([]);
 
+    //GET Watchlist
+    const [movies, setMovies] = useState([]);
     const GetWatchList = async () => {
         const response = await fetch('https://api.themoviedb.org/3/account/12087692/watchlist/movies?api_key=18c103f8d64a085829984a62f7664c81&language=en&session_id=87a00a9299e6268604e49dda491cfa12b29c388c&sort_by=created_at.asc&page=1') 
         //wait for response
@@ -40,6 +41,10 @@ const ProfilePageContainer = () => {
 
                         </div>
                 )}
+
+                <p>Render lists</p>
+                <p>Render list contents</p>
+
         </div>
         
         </>
