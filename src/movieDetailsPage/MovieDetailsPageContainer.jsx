@@ -72,23 +72,28 @@ function MovieDetailsPageContainer(  ) {
     
     return (
         <>
-        <p>---------MovieDetailsPageContainer---------</p>
-        <div >
-            <div className='movieImage'>
-                <div>
-                    <img className='poster' src={movie.poster_path !== 'undefined' ? `${Poster_URL_constant}${movie.poster_path}` : "https://via.placeholder.com/400"} alt={movie.title}/>
-                </div> 
-            </div>
+        <div className='movieDescription'>
+          <img className='poster' src={movie.poster_path !== 'undefined' ? `${Poster_URL_constant}${movie.poster_path}` : "https://via.placeholder.com/400"} alt={movie.title}/>
+          <div className='movieDescriptionText'>
+            <p>{movie.title}</p>
+            <p>{movie.overview}</p>
+          </div>
         </div>
         <div className='addToListButtons'>
-                    <button onClick={() => addToWatchlist({movieId})}>  
-                    Add to Watchlist
-                    </button>
-                    <Link to="/searchresults/moviedetails/chooselistcontainer" state={ movieId }>
-                            <button>Add to list</button> </Link>
-                </div>
+          <button className='button' onClick={() => addToWatchlist({movieId})}>  
+            <span>
+              Add to Watchlist
+            </span>
+          </button>
+            <Link to="/searchresults/moviedetails/chooselistcontainer" state={ movieId }>
+              <button className='button'>
+                <span>
+                  Add to List
+                </span>
+              </button> 
+            </Link>
+        </div>
         
-        <p>---------MovieDetailsPageContainer---------</p>
         </>
     )
 }

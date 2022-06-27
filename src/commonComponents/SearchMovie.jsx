@@ -9,20 +9,21 @@ function SearchMovie() {
 
    return (
         <>
-        <div className="search">
-            <input 
-            type='text'
-            placeholder = 'Search for movies' 
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            />
+        <div className="app">
+            <div className="search">
+                <input 
+                type='text'
+                placeholder = 'Search for movies' 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                />
 
-            <Link to="/searchresults" state={{ searchTerm }}>
-                
-            <img src={SearchIcon} />
-            </Link>
+                <Link to="/searchresults" state={{ searchTerm }}>
+                    
+                <img src={SearchIcon} />
+                </Link>
+            </div>
         </div>
-        
         </>
     )
 }

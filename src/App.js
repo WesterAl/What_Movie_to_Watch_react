@@ -2,7 +2,6 @@
 //Navigation etc. https://www.youtube.com/watch?v=Jppuj6M1sJ4
 import './App.css';
 //Import header componets
-import Breadcrumbs from './header/Breadcrumbs';
 import Navigationbar from './header/Navigationbar';
 import Pagetitle from './header/Pagetitle';
 import Searchmovie from './commonComponents/SearchMovie'
@@ -44,27 +43,24 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="app">
       <header>
       <Pagetitle />
       <Navigationbar />
-      <Breadcrumbs />
       </header>
       <Routes>
-      <Route path='/' element={<HomeContainer />}  />
-      <Route path='/login' element={<LoginForm /> } />
-      <Route path='/profilepage' element={<ProfilePageContainer />} />
-      <Route path='/registration' element={<RegistrationForm />} />     
-      <Route path='/searchresults' element={<SearchResultsContainer />} />     
-      <Route path='/createlist' element={<CreateListForm />} />     
-      <Route path='/searchresults/moviedetails' element={<MovieDetailsPageContainer />} />
-      <Route path='/searchresults/moviedetails/chooselistcontainer' element={<ChooseListContainer />} />     
-    </Routes>
+        <Route path='/' element={<HomeContainer />}  />
+        <Route path='/login' element={<LoginForm /> } />
+        <Route path='/profilepage' element={<ProfilePageContainer />} />
+        <Route path='/registration' element={<RegistrationForm />} />     
+        <Route path='/searchresults' element={<SearchResultsContainer />} />     
+        <Route path='/createlist' element={<CreateListForm />} />     
+        <Route path='/searchresults/moviedetails' element={<MovieDetailsPageContainer />} />
+        <Route path='/searchresults/moviedetails/chooselistcontainer' element={<ChooseListContainer />} />     
+      </Routes>
       
       <footer>
       <Footer />
       </footer>
-    </div>
 
     
     </BrowserRouter>
