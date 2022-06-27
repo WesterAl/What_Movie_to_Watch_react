@@ -27,7 +27,7 @@ function PopularMoviesContainer() {
         const data = await response.json();
         //console log results from json
         setMovies(data.results);
-        console.log(data.results);
+        //console.log(data.results);
       }
   
     //Used to load popular movies from API on page load
@@ -36,7 +36,7 @@ function PopularMoviesContainer() {
   
     }, []);
 
-
+    //console.log(movies[0])
 
     
     return (

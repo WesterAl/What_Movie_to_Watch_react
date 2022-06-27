@@ -29,7 +29,7 @@ function MovieDetailsPageContainer(  ) {
     const fetchData = async () => {
           const res = await fetch(` https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
           const json = await res.json()
-          console.log(movieId)
+          //console.log(json)
           setMovie(json);
         };
 

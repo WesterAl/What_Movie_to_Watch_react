@@ -11,6 +11,7 @@ function SearchMovie() {
         <>
         <div className="app">
             <div className="search">
+                <label for="input" class="visuallyhidden">Search for a movie</label>
                 <input 
                 type='text'
                 placeholder = 'Search for movies' 
