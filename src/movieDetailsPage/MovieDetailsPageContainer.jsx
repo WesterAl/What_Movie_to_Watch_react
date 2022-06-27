@@ -1,5 +1,6 @@
+import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function MovieDetailsPageContainer(  ) {
     
@@ -23,7 +24,7 @@ function MovieDetailsPageContainer(  ) {
     const API_KEY = '18c103f8d64a085829984a62f7664c81'
     const queryString = "&query="
   
-    //Used to load movies from API on page load
+    //Used to load movie from API on page load
     const title = ""
     const fetchData = async () => {
           const res = await fetch(` https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
@@ -65,53 +66,8 @@ function MovieDetailsPageContainer(  ) {
         }
       
 
-    //Add to list
-    const [lists, setLists] = useState([]);    
-    const getLists = async () => {
-        
-        console.log("addToList is working")
-
-        //GET json with all created lists
-        //Show lists to user
-        //Send movieId in POST request
-
-        //Get created lists
-        // https://api.themoviedb.org/3/account/12087692/lists?api_key=18c103f8d64a085829984a62f7664c81&session_id=239f82b6d7a2477944763397767e5e6aa6f886b2
-          
-        //POST movie to databse watchlist
-        //const actualData = await fetch('https://api.themoviedb.org/3/account/12087692/lists?api_key=18c103f8d64a085829984a62f7664c81&session_id=239f82b6d7a2477944763397767e5e6aa6f886b2')
-        //.then(response => response.json());
-        
-        //-------------
-        try {
-            const response = await fetch('https://api.themoviedb.org/3/account/12087692/lists?api_key=18c103f8d64a085829984a62f7664c81&session_id=239f82b6d7a2477944763397767e5e6aa6f886b2');
-            if (!response.ok) {
-              throw new Error(
-                `This is an HTTP error: The status is ${response.status}`
-              );
-            }
-            let actualData = await response.json();
-            setLists(actualData);
-            //console.log(actualData.results);
-            
-          } catch(err) {
-            console.log(err)
-          } 
-        
-        //_____________
-        
-        console.log("addToWatchlist finished")
-        
-    }
-
-    //console.log("TEST1")
-    console.log(lists)
-    //console.log("TEST2")
-
-    useEffect(() => {
-        getLists();
-      }, []);   
     
+
 
     
     return (
@@ -134,14 +90,12 @@ function MovieDetailsPageContainer(  ) {
                         Add to Watchlist
                         </button>
 
+                        <Link to="/searchresults/moviedetails/chooselistcontainer" state={ movieId }>
+                            <button>Add to list</button> 
+                        </Link>
+                    
+
                         
-                        <div>
-                        <select>
-                            <option value="fruit">Fruit</option>
-                            <option value="vegetable">Vegetable</option>
-                            <option value="meat">Meat</option>
-                        </select>
-                        </div>
                     </div>
 
                     

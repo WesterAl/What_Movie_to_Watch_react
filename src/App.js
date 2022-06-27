@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SearchResultsContainer from './searchResultPage/SearchResultsContainer';
 import { useEffect } from 'react';
+import ChooseListContainer from './movieDetailsPage/ChooseListContainer';
 
 
 
@@ -56,7 +57,8 @@ function App() {
       <Route path='/registration' element={<RegistrationForm />} />     
       <Route path='/searchresults' element={<SearchResultsContainer />} />     
       <Route path='/createlist' element={<CreateListForm />} />     
-      <Route path='/searchresults/moviedetails' element={<MovieDetailsPageContainer />} />     
+      <Route path='/searchresults/moviedetails' element={<MovieDetailsPageContainer />} />
+      <Route path='/searchresults/moviedetails/chooselistcontainer' element={<ChooseListContainer />} />     
     </Routes>
       
       <footer>
