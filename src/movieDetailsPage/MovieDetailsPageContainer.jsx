@@ -1,5 +1,6 @@
+import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function MovieDetailsPageContainer(  ) {
     
@@ -23,7 +24,7 @@ function MovieDetailsPageContainer(  ) {
     const API_KEY = '18c103f8d64a085829984a62f7664c81'
     const queryString = "&query="
   
-    //Used to load movies from API on page load
+    //Used to load movie from API on page load
     const title = ""
     const fetchData = async () => {
           const res = await fetch(` https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
@@ -64,11 +65,11 @@ function MovieDetailsPageContainer(  ) {
           console.log("addToWatchlist finished")
         }
       
-    //Add to list
-    function addToList(){
-        console.log("addToList is working")
-        
-    }
+
+    
+
+
+    
     return (
         <>
         <p>---------MovieDetailsPageContainer---------</p>
