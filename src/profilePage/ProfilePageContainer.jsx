@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import IndividualMovieCards from 'E:/Erasmus/WEB/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx';
+import IndividualMovieCards from 'C:/Users/Albin/Desktop/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
 
 const ProfilePageContainer = () => {
     const [movies, setMovies] = useState([]);

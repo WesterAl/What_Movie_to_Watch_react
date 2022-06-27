@@ -21,16 +21,16 @@ function Navigationbar() {
             <li>
             <Link to="/registration">Registrate</Link>
             </li>
-            <div class='dot'></div>
+            <div className='dot'></div>
         </ul>
 
-        <nav class="navMenu">
+        <nav className="navMenu">
             <a href="/">Home</a>
             <a href="/createlist">Lists</a>
             <a href="/profilepage">Profile</a>
             <a href="/login">Login/Logout</a>
             <a href="/registration">Registrate</a>
-            <div class="dot"></div>
+            <div className="dot"></div>
         </nav>
         </>
     )
