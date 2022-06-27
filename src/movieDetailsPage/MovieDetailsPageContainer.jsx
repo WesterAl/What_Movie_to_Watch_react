@@ -84,9 +84,8 @@ function MovieDetailsPageContainer(  ) {
                     <button onClick={() => addToWatchlist({movieId})}>  
                     Add to Watchlist
                     </button>
-                    <button onClick={addToList}>  
-                    Add to list
-                    </button>
+                    <Link to="/searchresults/moviedetails/chooselistcontainer" state={ movieId }>
+                            <button>Add to list</button> </Link>
                 </div>
         
         <p>---------MovieDetailsPageContainer---------</p>
