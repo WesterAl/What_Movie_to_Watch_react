@@ -56,9 +56,6 @@ function App() {
         <Route path='/searchresults/moviedetails/chooselistcontainer' element={<ChooseListContainer />} />     
       </Routes>
       
-      <footer>
-      <Footer />
-      </footer>
 
     
     </BrowserRouter>
