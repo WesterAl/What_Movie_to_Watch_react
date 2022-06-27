@@ -1,5 +1,3 @@
-
-//Navigation etc. https://www.youtube.com/watch?v=Jppuj6M1sJ4
 import './App.css';
 //Import header componets
 import Breadcrumbs from './header/Breadcrumbs';
