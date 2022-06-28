@@ -11,18 +11,12 @@ function SearchResultsContainer(props) {
     const location = useLocation();
     const searchTerm = location.state;
 
-    //https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
-
     const [movies, setMovies] = useState([]);
 
     const API_URL = 'https://api.themoviedb.org/3'
 
-    //Start URL for getting posters
-    //const Poster_URL_constant = 'http://image.tmdb.org/t/p/w500/'
-
     //GET popular movies from API
-    
-    const GET_search_movies = "https://api.themoviedb.org/3/search/movie?api_key=" //Jack+Reacher"
+    const GET_search_movies = "https://api.themoviedb.org/3/search/movie?api_key=" 
     const API_KEY = '18c103f8d64a085829984a62f7664c81'
     const queryString = "&query="
   
