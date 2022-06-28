@@ -37,14 +37,18 @@ const createList = (listName, description) => {
     return (
         <>
         <div>
+            <label for="input" className='visuallyHidden'>Name of the list</label>
             <input 
+            id="input"
             placeholder='Name of the list'
             value={listName}
             onChange={(e) => setListName(e.target.value)} 
             />
         </div>
         <div>
+            <label for="textarea" className='visuallyHidden'>Description</label>
             <textarea 
+            id="textarea"
             placeholder='Description'
             value={description}
             onChange={(e) => setDescription(e.target.value)} 

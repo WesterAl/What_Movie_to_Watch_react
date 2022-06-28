@@ -54,10 +54,7 @@ function App() {
         <Route path='/createlist' element={<CreateListForm />} />     
         <Route path='/searchresults/moviedetails' element={<MovieDetailsPageContainer />} />
         <Route path='/searchresults/moviedetails/chooselistcontainer' element={<ChooseListContainer />} />     
-      </Routes>
-      
-
-    
+      </Routes>    
     </BrowserRouter>
     
   );
