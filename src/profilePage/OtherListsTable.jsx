@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import IndividualMovieCards from 'E:/Erasmus/WEB/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
+import IndividualMovieCards from 'C:/Users/Albin/Desktop/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
+//'E:/Erasmus/WEB/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
 import ArrowUp from './arrowup.svg';
 import ArrowDown from './arrowdown.svg';
 import useCollapse from 'react-collapsed';
