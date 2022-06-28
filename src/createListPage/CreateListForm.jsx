@@ -6,9 +6,8 @@ function CreateListForm() {
     const[listName, setListName]=useState([])
     const[description, setDescription]=useState([])
 
-    //-----This part should be moved to CreateList page------------_-
+
 const createList = (listName, description) => {
-    //function addToWatchlist(movieId){
         console.log(listName)
         console.log(description)
         const language = "en"        
@@ -17,8 +16,7 @@ const createList = (listName, description) => {
             "description": description,
             "language": language
         }     
-        //POST movie to databse watchlist
-        // https://api.themoviedb.org/3/list?api_key=<<api_key>>
+        //POST movie to database watchlist
         if(listName != '' && description != ''){
             fetch('https://api.themoviedb.org/3/list?api_key=18c103f8d64a085829984a62f7664c81&session_id=239f82b6d7a2477944763397767e5e6aa6f886b2', 
             {
@@ -36,12 +34,12 @@ const createList = (listName, description) => {
             alert("You have to put the name and the description first!")
         }
         }
-        //------------------------------------
-    return (
+
+        return (
         <>
         <div className='app'>
             <div className='listName'>
-            <label for="input" className='visuallyHidden'>Name of the list</label>
+            <label for="input" class="visuallyhidden" >Name of the list</label>
                 <input 
                 id='input'
                 placeholder='Name of the list'
@@ -50,7 +48,7 @@ const createList = (listName, description) => {
                 />
             </div>
             <div className='listName'>
-            <label for="textarea" className='visuallyHidden'>Description</label>
+            <label for="textarea" class="visuallyhidden" >Description</label>
                 <textarea 
                 id='textarea'
                 placeholder='Description'

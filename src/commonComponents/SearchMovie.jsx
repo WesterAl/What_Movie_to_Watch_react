@@ -11,7 +11,7 @@ function SearchMovie() {
         <>
         <div className="app">
             <div className="search">
-                <label for="input" class="visuallyhidden">Search for a movie</label>
+                <label for="input" class="visuallyhidden" >Search for a movie</label>
                 <input 
                 id="input"
                 type='text'

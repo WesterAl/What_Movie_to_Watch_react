@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 
 const IndividualMovieCards = ({ movie: { id, release_date, poster_path, title } }) => {
     const Poster_URL_constant = 'http://image.tmdb.org/t/p/w500/'
-    //console.log('Text')
-    //console.log(title)
+   
   return (
     <Link to="/searchresults/moviedetails" state={{ movieId: id }}>
         <div className="movie" key={id}>
