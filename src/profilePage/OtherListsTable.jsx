@@ -1,7 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import MovieCardsFromList from './MovieCardsFromList'
+import IndividualMovieCards from 'C:/Users/Albin/Desktop/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
+//'E:/Erasmus/WEB/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
+import ArrowUp from './arrowup.svg';
+import ArrowDown from './arrowdown.svg';
+import useCollapse from 'react-collapsed';
 
 function OtherListsTable( list ) {
     //list
@@ -9,6 +13,8 @@ function OtherListsTable( list ) {
     const individualList = listObj.props 
 
     const API_URL = 'https://api.themoviedb.org/3'
+    //const used for collapse
+    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
     //GET request to get list contents
     const [movies, setMovies] = useState([]);
@@ -24,23 +30,32 @@ function OtherListsTable( list ) {
 
     return (
         <>
-        
 
-        <h2>List name:{"  " + individualList.name}</h2>
-
-        {movies?.length > 0
-                ? (
-                    <div className='movieComponents'>
-                        {movies.map((movie)  => (
-                        <MovieCardsFromList movie={movie} key={movie.id}/>
-                        ))}
-                    </div>
-                ) : (
-                        <div className='empty'>
-                            <h2>No movies</h2>
-
+        <div className="app">
+            <div className="collapsHeader" {...getToggleProps()}>
+                <h4>{individualList.name}</h4>
+                {isExpanded ? 
+                    <img src={ArrowUp}></img> : <img src={ArrowDown}></img>}
+            </div>
+            <div {...getCollapseProps()}>
+                <div className="content">
+                    {movies?.length > 0
+                    ? (
+                        <div className='container'>
+                            {movies.map((movie)  => (
+                                <IndividualMovieCards movie={movie} key={movie.id} />   
+                            ))}
                         </div>
-                )}
+                    ) : (
+                            <div className='empty'>
+                                <h2>No movies</h2>
+
+                            </div>
+                    )}
+                </div>
+            </div>
+        </div>
+        
         </>
     )
 }

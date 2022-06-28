@@ -3,7 +3,9 @@ import { useEffect } from 'react';
 import IndividualMovieCards from 'C:/Users/Albin/Desktop/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx'
 //'E:/Erasmus/WEB/What_Movie_to_Watch_react/src/homePage/IndividualMovieCards.jsx
 import OtherListsTable from './OtherListsTable';
-
+import useCollapse from 'react-collapsed';
+import ArrowUp from './arrowup.svg';
+import ArrowDown from './arrowdown.svg';
 
 const ProfilePageContainer = () => {
 
@@ -17,8 +19,8 @@ const ProfilePageContainer = () => {
         setMovies(data.results);
         //console.log(data.results);
     }
-
-
+    //const used for collapse
+    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
     //GET created lists
     //Store lists
     const [lists, setLists] = useState([]);    
@@ -47,30 +49,36 @@ const ProfilePageContainer = () => {
     return (
 
         <>
-        <div className='PopularMoviesContainer'>
-        <h2>Watchlist</h2>
-
-        {movies?.length > 0
-                ? (
-                    <div className='movieComponents'>
-                        {movies.map((movie)  => (
-                            <IndividualMovieCards movie={movie} key={movie.id} />
-                            
-                        ))}
-                    </div>
-                ) : (
-                        <div className='empty'>
-                            <h2>No movies</h2>
-
+        <div className="app">
+            <div className="collapsHeader" {...getToggleProps()}>
+                <h4>Watchlist</h4>
+                {isExpanded ? 
+                    <img src={ArrowUp}></img> : <img src={ArrowDown}></img>}
+            </div>
+            <div {...getCollapseProps()}>
+                <div className="content">
+                    {movies?.length > 0
+                    ? (
+                        <div className='container'>
+                            {movies.map((movie)  => (
+                                <IndividualMovieCards movie={movie} key={movie.id} />   
+                            ))}
                         </div>
-                )}
+                    ) : (
+                            <div className='empty'>
+                                <h2>No movies</h2>
 
+                            </div>
+                    )}
+                </div>
+            </div>
         </div>
+
 
         <div>
         {lists?.length > 0
                 ? (
-                    <div className='movieComponents'>
+                    <div>
                         {lists.map((list)  => (
                         <OtherListsTable props={list}  key={list.id}/>
                         ))}
@@ -82,7 +90,7 @@ const ProfilePageContainer = () => {
                         </div>
                 )}
         </div>
-        
+
         </>
     )
 }

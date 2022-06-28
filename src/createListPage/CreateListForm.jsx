@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import notify from '../commonComponents/NotificationContainer'
 
 function CreateListForm() {
     const[listName, setListName]=useState([])
@@ -29,6 +31,7 @@ const createList = (listName, description) => {
             })
     
             console.log("createList finished")
+            notify('The list is added')
         } else {
             alert("You have to put the name and the description first!")
         }
@@ -36,30 +39,34 @@ const createList = (listName, description) => {
         //------------------------------------
     return (
         <>
-        <div>
+        <div className='app'>
+            <div className='listName'>
             <label for="input" className='visuallyHidden'>Name of the list</label>
-            <input 
-            id="input"
-            placeholder='Name of the list'
-            value={listName}
-            onChange={(e) => setListName(e.target.value)} 
-            />
-        </div>
-        <div>
+                <input 
+                id='input'
+                placeholder='Name of the list'
+                value={listName}
+                onChange={(e) => setListName(e.target.value)} 
+                />
+            </div>
+            <div className='listName'>
             <label for="textarea" className='visuallyHidden'>Description</label>
-            <textarea 
-            id="textarea"
-            placeholder='Description'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)} 
-            />
+                <textarea 
+                id='textarea'
+                placeholder='Description'
+                value={description}
+                onChange={(e) => setDescription(e.target.value)} 
+                />
+            </div>
+            <div>
+                <button className='button' onClick={() => createList(listName, description)
+                    }>
+                       <span>Create</span> 
+                </button> 
+            </div>
+            <ToastContainer/>
         </div>
-        <div>
-            <button onClick={() => createList(listName, description)
-                }>
-                    Create
-            </button> 
-        </div>
+        
         </>
     )
 
