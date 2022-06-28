@@ -9,7 +9,6 @@ import LoginForm from './loginPage/LoginForm';
 import MovieDetailsPageContainer from './movieDetailsPage/MovieDetailsPageContainer';
 import ProfilePageContainer from './profilePage/ProfilePageContainer'
 import RegistrationForm from './registrationPage/RegistrationForm'
-import Footer from './footer/Footer';
 import CreateListForm from './createListPage/CreateListForm';
 import Button from '@mui/material/Button';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -55,11 +54,6 @@ function App() {
         <Route path='/searchresults/moviedetails' element={<MovieDetailsPageContainer />} />
         <Route path='/searchresults/moviedetails/chooselistcontainer' element={<ChooseListContainer />} />     
       </Routes>
-      
-      <footer>
-      <Footer />
-      </footer>
-
     
     </BrowserRouter>
     

@@ -40,7 +40,7 @@ function SearchResultsContainer(props) {
 
     return (
         <>
-        <h1>-------------SearchResultsContainer-----------------</h1>
+        <SearchMovie />
         {movies?.length > 0
                 ? (
                     <div className='container'>
@@ -55,8 +55,6 @@ function SearchResultsContainer(props) {
 
                         </div>
                 )}
-
-        <h1>-----------SearchResultsContainer-------------------</h1>
         </>
         
     )

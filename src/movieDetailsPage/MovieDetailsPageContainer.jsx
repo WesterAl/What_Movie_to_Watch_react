@@ -1,6 +1,8 @@
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
 import { Link, useLocation } from 'react-router-dom';
+import notify from '../commonComponents/NotificationContainer'
 
 function MovieDetailsPageContainer(  ) {
     
@@ -63,6 +65,7 @@ function MovieDetailsPageContainer(  ) {
           })
 
           console.log("addToWatchlist finished")
+          notify('The movie is added')
         }
       
 
@@ -92,8 +95,8 @@ function MovieDetailsPageContainer(  ) {
                 </span>
               </button> 
             </Link>
+            <ToastContainer />
         </div>
-        
         </>
     )
 }

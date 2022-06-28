@@ -20,8 +20,7 @@ function SearchMovie() {
                 />
 
                 <Link to="/searchresults" state={{ searchTerm }}>
-                    
-                <img src={SearchIcon} />
+                    <img src={SearchIcon} />
                 </Link>
             </div>
         </div>

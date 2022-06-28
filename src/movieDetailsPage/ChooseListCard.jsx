@@ -1,18 +1,12 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import notify from '../commonComponents/NotificationContainer'
 
 function ChooseListCard( props ) {
     
     const list = props.props.list
     const movieId = props.props.movieId
-    //console.log(list)
-    
-    //const lisbObj = list
-    //const individualList = lisbObj.list
-    
-
-    //console.log(list.list)
-    
-    //console.log()
 
     //POST movie to list
     const addToList = () => {
@@ -38,25 +32,17 @@ function ChooseListCard( props ) {
             })
   
             console.log("addToList finished")
+            notify('The movie is added')
           }
 
     return (
-        <>
-            
-        <div className='listCard' onClick={addToList}>
-            
-            
-                    <div>
-                        <h2>List name: </h2>
-                        <h2>{list.name}</h2>
-                        <h3>Description</h3>
-                        <h3>{list.description}</h3>
-                        <p>Movies in list: {list.item_count}</p>
-                    </div>
-            
-                        
-                </div>
-                    
+        <> 
+        <div className='container' onClick={addToList}>
+          <div className='collapsHeader'>
+              <h2>{list.name}</h2>
+          </div>
+          <ToastContainer />
+        </div>           
         </>
     )
 }
